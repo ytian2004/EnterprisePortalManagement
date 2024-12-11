@@ -115,7 +115,9 @@ const optionsRoles = [
 
 const handleChange = (file) => {
   userForm.avatar = URL.createObjectURL(file);
-  // 提交给后端用的
+
+  //   // 提交给后端用的
+
   userForm.file = file;
 };
 

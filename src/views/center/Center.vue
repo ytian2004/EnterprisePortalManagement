@@ -64,7 +64,8 @@ import { computed, reactive, ref } from "vue";
 import { useStore } from "vuex";
 
 import { ElMessage } from "element-plus";
-import {upload} from "@/util/upload"
+import upload from "@/util/upload"
+
 import Upload from "@/components/upload/Upload.vue"
 
 

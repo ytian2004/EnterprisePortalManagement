@@ -5,8 +5,9 @@
       <el-table :data="tableData" style="width: 100%">
         <el-table-column prop="username" label="用户名" width="180" />
         <el-table-column prop="avatar" label="头像" width="180">
-          <!-- 下述内容为一个作用域插槽， #default 为 v-slot:default 的缩写 -->
-          <template #default="scope"> 
+
+          <template #default="scope">
+
             <div v-if="scope.row.avatar">
               <el-avatar
                 :size="50"

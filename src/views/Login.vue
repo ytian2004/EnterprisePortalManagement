@@ -1,7 +1,11 @@
 <template>
   <div>
-    <Particles
+
+    <vue-particles
       id="tsparticles"
+      :particlesInit="particlesInit"
+      :particlesloaded="particlesLoaded"
+
       :options="options"
     />
 
@@ -41,10 +45,15 @@
 
 <script setup>
 import { reactive, ref } from "vue";
+
+// import { loadFull } from "@tsparticles/vue3";
 import { useRouter } from "vue-router";
 import axios from "axios";
 import { ElMessage } from "element-plus";
+// import VueParticles from "vue-particles";
 import { useStore } from "vuex";
+import { Particles } from 'vue3-particles';
+
 
 const store = useStore();
 
@@ -87,7 +96,9 @@ const submitForm = () => {
 
       // 2. 提交后台，校验用户名和密码，如果成功，设置token，跳转到首页，如果失败，提示用户名和密码不匹配
       axios.post("/adminapi/user/login", loginForm).then((res) => {
-        // console.log(res.data);
+
+        console.log(res.data);
+
         if (res.data.ActionType === "OK") {
           store.commit("changeUserInfo", res.data.data);
           store.commit("changeGetterRouter", false);
@@ -180,6 +191,15 @@ const options = {
   },
   detectRetina: true,
 };
+
+
+const particlesInit = async (engine) => {
+  await loadFull(engine);
+};
+const particlesLoaded = async (container) => {
+  console.log("Particles container loaded", container);
+};
+
 </script>
 
 <style lang="scss" scoped>
