@@ -2,8 +2,6 @@
   <div>
     <Particles
       id="tsparticles"
-      :particlesInit="particlesInit"
-      :particlesloaded="particlesLoaded"
       :options="options"
     />
 
@@ -181,13 +179,6 @@ const options = {
     },
   },
   detectRetina: true,
-};
-
-const particlesInit = async (engine) => {
-  await loadFull(engine);
-};
-const particlesLoaded = async (container) => {
-  console.log("Particles container loaded", container);
 };
 </script>
 

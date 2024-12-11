@@ -58,6 +58,7 @@ const newsFormRef = ref();
 onMounted(async ()=>{
     // console.log(route.params.id)
     const res = await axios.get(`/adminapi/news/list/${route.params.id}`)
+    console.log(res.data.data)
     Object.assign(newsForm, res.data.data[0])
 })
 
