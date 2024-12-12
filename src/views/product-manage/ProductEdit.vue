@@ -53,7 +53,7 @@ onMounted(async ()=>{
     const res = await axios.get(`/adminapi/product/list/${route.params.id}`)
     // console.log(res.data.data)
     Object.assign(productForm,res.data.data[0])
-    console.log(productForm.cover)
+    // console.log(productForm.cover)
 })
 
 const handleBack = async () => {

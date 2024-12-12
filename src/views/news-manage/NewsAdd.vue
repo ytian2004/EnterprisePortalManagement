@@ -104,7 +104,7 @@ const handleChange = (file) => {
 const submitForm = () => {
   newsFormRef.value.validate(async (valid)=>{
     if(valid){
-      const res = await axios.post('/adminapi/news/add', newsForm)
+      await axios.post('/adminapi/news/add', newsForm)
       router.push(`/news-manage/newslist`)
     }
   })

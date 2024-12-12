@@ -48,7 +48,7 @@ onMounted(async ()=>{
 
     loopList.value = res.data.data
 
-    console.log(loopList.value)
+    // console.log(loopList.value)
 
 
 })
